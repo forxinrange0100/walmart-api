@@ -1,0 +1,26 @@
+[project]
+name = "walmart-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "olverarcedev",email = "olverarcedev@gmail.com"}
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi (>=0.129.0,<0.130.0)",
+    "uvicorn (>=0.41.0,<0.42.0)",
+    "statsforecast (>=2.0.3,<3.0.0)",
+    "pandas (>=3.0.1,<4.0.0)"
+]
+
+[tool.poetry]
+packages = [
+    { include = "api", from="src" }
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start = "api.server:start"
